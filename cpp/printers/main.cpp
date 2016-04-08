@@ -27,7 +27,7 @@ void printByIndex(T vec)
 }
 
 
-void printTestCase()
+int main()
 {
     vector<int> intVec;
     intVec.push_back(1);
@@ -38,10 +38,6 @@ void printTestCase()
     charVec.push_back('a');
     charVec.push_back('b');
     printByIndex(charVec);
-}
 
-int main()
-{
-    printTestCase();
     return 0;
 }
