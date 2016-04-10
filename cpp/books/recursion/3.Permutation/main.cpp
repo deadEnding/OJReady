@@ -9,22 +9,22 @@ using namespace std;
  *       = (r1)Perm(R1) + (r2)Perm(R2) + ... + (rn)Perm(Rn),  n > 1
  */
 template <class Type>
-void perm(Type list[], int k, int m)
+void perm(Type arr[], int k, int m)
 {
-    // 生成list[k:m)的所有排列
+    // 生成arr[k:m)的所有排列
     if (k == m)
     {
         for (int i=0; i<m; i++)
-            cout << list[i];
+            cout << arr[i];
         cout << endl;
     }
     else
     {
         for (int i=k; i<m; i++)
         {
-            swap(list[k], list[i]);
-            perm(list, k+1, m);
-            swap(list[k], list[i]);
+            swap(arr[k], arr[i]);
+            perm(arr, k+1, m);
+            swap(arr[k], arr[i]);
         }
     }
 }
