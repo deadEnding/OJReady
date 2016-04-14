@@ -29,7 +29,7 @@ void Merge(int a[], int left, int mid, int right)
     while (j <= right)
         tmp[k++] = a[j++];
 
-    memcpy(a + left, tmp, k * sizeof(int));   // 第三个参数为拷贝的字节数
+    memcpy(a + left, tmp, k * sizeof(int));   // 第三个参数为拷贝的字节数，同memset
     delete tmp;
 }
 
@@ -47,10 +47,11 @@ void MergeSort(int a[], int left, int right)
 
 int main()
 {
-    int x[10] = {1,3,5,7,9,2,4,6,8,10};
-    Merge(x, 0, 4, 9);
-    for (int i=0; i<10; i++)
-        cout << x[i] << " ";
+    int a[] = {34,65,12,43,67,5,78,10,3,70};
+    int len = sizeof(a) / sizeof(int);
+    MergeSort(a, 0, len - 1);
+    for (int i=0; i< len; i++)
+        cout << a[i] << " ";
     cout << endl;
 
     return 0;
