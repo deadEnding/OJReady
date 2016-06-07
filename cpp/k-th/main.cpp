@@ -14,6 +14,7 @@ using namespace std;
  */
 int Partition(int a[], int i, int j) {
     int x = a[i];
+
     while (i < j) {
         while (i < j && a[j] >= x) j--;
         if (i < j)
@@ -23,6 +24,7 @@ int Partition(int a[], int i, int j) {
             a[j--] = a[i];
     }
     a[i] = x;
+
     return i;
 }
 
@@ -74,6 +76,7 @@ int SearchKth(int a[], int m, int b[], int n, int k) {
 
     int pa = min(k/2, m);
     int pb = k - pa;
+
     if (a[pa - 1] < b[pb - 1]) {
         return SearchKth(a + pa, m - pa, b, n, k - pa);
     } else if (a[pa - 1] > b[pb - 1]) {
