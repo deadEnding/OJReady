@@ -42,11 +42,11 @@ int SearchKth(int a[], int i, int j, int k) {
     int m = Partition(a, i, j);
 
     if (m - i < k - 1) {
-        SearchKth(a, m + 1, j, k - (m - i + 1));
+        return SearchKth(a, m + 1, j, k - (m - i + 1));
     } else if (m - i == k - 1) {
         return a[m];
     } else {
-        SearchKth(a, i, m - 1, k);
+        return SearchKth(a, i, m - 1, k);
     }
 }
 
